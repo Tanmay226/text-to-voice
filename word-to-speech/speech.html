@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word to Speech  online</title>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    h1{
+        font-size: 56px;
+        margin: 50px 0;
+        font-family: sans-serif;
+    }
+    #input{
+        margin: 25px 0;
+        border: 1px solid black;
+        border-radius: 10px;
+font-size: 26px;
+    }
+    #button{
+        width: 266px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        border: 1px solid black;
+        border-radius: 15px;
+        cursor: pointer;
+        background: #329b02;
+        color: aliceblue;
+        font-weight: 800;
+    }
+    #button:hover{
+    
+        background: transparent;
+        border-color: #329b02;
+        color: #329b02;
+    }
+
+ 
+</style>
+
+</head>
+<body>
+    
+<div class="container">
+    <h1>word to speech converter</h1>
+    <textarea name="input" id="input" cols="30" rows="10"></textarea>
+    <button id="button" >Speck</button>
+</div>
+
+
+<script>
+let button = document.querySelector("#button");
+let text = document.querySelector("textarea");
+
+button.addEventListener("click",()=>{
+    console.log(text.value)
+    let utterance = new SpeechSynthesisUtterance(text.value);
+
+    speechSynthesis.speak(utterance);
+});
+
+</script>
+<!-- <script>
+    let button = document.querySelector("#button");
+    let text = document.querySelector("textarea");
+    
+    button.addEventListener("click", () => {
+      console.log(text.value);
+      let utterance = new SpeechSynthesisUtterance(text.value);
+      
+      speechSynthesis.speak(utterance); // Corrected spelling of 'speak' method
+    });
+    </script> -->
+
+</body>
+</html>
